@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>debounce&throttle</title>
+  </head>
+
+  <body>
+  	<div>
+  		<span>防抖</span>
+  		<button id="submit">提交</button>
+  	</div>
+  	<hr>
+  	<div>
+  		<span>节流</span>
+  		<progress id="progress" value="10" max="100">
+  	</div>
+    <script src="./index.js"></script>
+    <script>
+    	~function(){
+	        function ajax(content){
+	            console.log('ajax request'+content);
+	        }
+	        function debounce(func,delay){
+	            let timer=null;
+	            return (...args)=>{
+	                clearTimeout(timer);
+	                timer=setTimeout(()=>{
+	                    func.apply(this,args);
+	                },delay)
+	            }
+	        }
+	        let input=document.querySelector("#submit");
+	        debounceTask=debounce(ajax,1000)
+	        input.addEventListener('click',(e)=>{
+	            debounceTask(e.target.value)
+	        })
+	    }()
+
+	    ~function(){
+        function ajax(content){
+            console.log('ajax request'+content);
+        }
+        function throttle(func,delay){
+            let lastTime=0;
+            return (...args)=>{
+                let now=Date.now();
+                if(now-lastTime>delay){
+                    console.time();
+                    func.call(this,args);
+                    console.timeEnd();
+                    lastTime=now;
+                }
+            }
+        }
+        let input=document.querySelector("#progress");
+        throttleTask=throttle(ajax,2000)
+        input.addEventListener('click',(e)=>{
+            throttleTask(e.target.value)
+        })
+    }()
+    </script>
+  </body>
+</html>
