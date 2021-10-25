@@ -1,0 +1,146 @@
+.Steps {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  padding-top: 10px;
+}
+.Steps li {
+  width: 50px;
+  height: 150px;
+  min-height: 150px;
+  padding: 0 0 20px 0;
+  background: #00bfff;
+  text-align: center;
+  list-style: none;
+  position: relative;
+  margin-bottom: 20px;
+}
+.Steps li .index {
+  position: absolute;
+  left: -35px;
+  top: 40px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 22px;
+}
+.Steps li span {
+  display: inline-block;
+  width: 20px;
+  line-height: 24px;
+}
+.Steps li .card {
+  position: absolute;
+  left: 70px;
+  top: 0;
+  width: 60vw;
+  text-align: left;
+  max-width: none;
+  height: 150px;
+  padding: 10px;
+  box-shadow: 2px 2px 2px #888888;
+}
+.Steps li .card span {
+  display: inline;
+  font-size: 16px !important;
+}
+
+.Steps li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 25px solid transparent;
+  border-bottom: 25px solid #fff;
+  left: 0px;
+  bottom: 0px;
+}
+
+.Steps li:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border: 25px solid transparent;
+  border-bottom: 25px solid #00bfff;
+  top: -50px;
+  z-index: 10;
+}
+
+.Steps li:first-child {
+  border-radius: 5px 5px 0 0;
+  padding-top: 15px;
+  height: 165px;
+  min-height: 165px;
+}
+.Steps li:first-child::after {
+  display: none;
+}
+.Steps li:last-child {
+  border-radius: 0 0 5px 5px;
+  padding-bottom: 25px;
+}
+.Steps li:last-child::before {
+  display: none;
+}
+
+.Steps li.status0 {
+  background-color: #00bfff;
+}
+.Steps li.status0:after {
+  border-bottom-color: #00bfff;
+}
+.Steps li.status0:before {
+  border-left-color: #00bfff;
+  border-right-color: #00bfff;
+}
+
+.Steps li.status1 {
+  background-color: #00f6fa;
+}
+.Steps li.status1:after {
+  border-bottom-color: #00f6fa;
+}
+.Steps li.status1:before {
+  border-left-color: #00f6fa;
+  border-right-color: #00f6fa;
+}
+
+.Steps li.status2 {
+  background-color: #5dfcba;
+}
+.Steps li.status2:after {
+  border-bottom-color: #5dfcba;
+}
+.Steps li.status2:before {
+  border-left-color: #5dfcba;
+  border-right-color: #5dfcba;
+}
+
+.Steps li.status3 {
+  background-color: #0be3b8;
+}
+.Steps li.status3:after {
+  border-bottom-color: #0be3b8;
+}
+.Steps li.status3:before {
+  border-left-color: #0be3b8;
+  border-right-color: #0be3b8;
+}
+
+.Steps li.status4 {
+  background-color: #00f059;
+}
+.Steps li.status4:after {
+  border-bottom-color: #00f059;
+}
+.Steps li.status4:before {
+  border-left-color: #00f059;
+  border-right-color: #00f059;
+}
+
+.card {
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  color: #303133;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
