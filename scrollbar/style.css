@@ -1,0 +1,42 @@
+.wrap{
+	width: 800px;
+    height: 300px;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.wrap .content_div{
+	height: 100%;
+    overflow: auto;
+    width: 200%;
+}
+
+.wrap .content{
+	width: 50%;
+}
+
+h1{
+	padding: 0 10px;
+}
+p{
+	padding: 0 10px;
+}
+
+.wrap .scroll_div{
+	height: 100%;
+    width: 5px;
+    background: #e23;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.wrap .bar{
+	background: #ddd;
+    width: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}

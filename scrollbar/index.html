@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>scrollbar</title>
+  </head>
+
+  <body>
+  	<div class="wrap" id="wrap">
+  		<div class="content_div" id="boxMidle">
+  			<div class="content" id="content">
+		  		<h1>楔子</h1>
+		  		<p>
+		  			当我们给元素加上 overflow: auto; 的时候，就会出现滚动条，然而浏览的不同，滚动条的样式大不一样，有些甚至非常丑。
+		  		</p>
+		  		<h1>实现步骤</h1>
+		  		<p>
+		  			1.我们可以先根据内容求出滚动条的高度
+					2.当鼠标进入时容器，鼠标按住，则滚动条跟鼠标在容器的盒子走动
+					3.滚动条滚动，根据定位，内容盒子跟着滚动
+					4.鼠标离开则不滚动
+		  		</p>
+		  		<h1>注意事项一</h1>
+		  		<p>
+		 			1.scrollTop的值不可以加单位，谨记！
+		            2.网页缩放比例会影响效果实现；
+		            3.滚动条 bar 是根据内容的多少，高度不一样的，这个需要动态的计算
+					4.滚动条 bar 的 top 位置 和 内容scrollTop 的关系。
+		  		</p>
+		  		<h1>知识点</h1>
+		  		<p>
+		  			1.offsetHeight ： height + padding + border
+					2.clientHeight ： height + padding
+					3.scrollHeight ： 内容的高度(所有子元素高度和) + paddings
+					4.bar的高度 / wrap的高度 = wrap的高度 / wrap 内容部子元素的高度和 ； 此时忽略 wrap 的padding：0
+					5.bar的top / wrap的scrollTop = wrap的高度 / wrap 内容部子元素的高度和 ；
+					6.需要注意，当比例 的 值 小于 1 的时候，说明 这个时候没有出现滚动条。
+		  		</p>
+  			</div>
+  		</div>
+  		<div class="bar" id="bar"></div>
+  	</div>
+    <script src="./index.js"></script>
+  </body>
+</html>
